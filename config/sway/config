@@ -1,0 +1,257 @@
+set $mod Mod4
+set $alt Mod1
+set $ctrl Control
+set $left Left
+set $down Down
+set $up Up
+set $right Right
+set $term foot
+set $menu pkill wofi || wofi -c ~/.config/wofi/config -I | xargs swaymsg exec --
+
+####  Autostart
+exec $HOME/.config/sway/preserve-layout-per-window.py &
+exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus &
+exec fish -c tag1 
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec fish -c bar_ch 
+
+
+font pango: JetBrains Mono Nerd Font 13
+
+# Correct way to set cursor
+seat seat0 xcursor_theme WhiteSur-cursors 28
+
+# Hide title bar
+default_border pixel 2
+
+input type:touchpad {
+  tap enabled
+  dwt disabled
+  natural_scroll enabled
+  middle_emulation enabled
+}
+
+input * {
+    natural_scroll enabled
+    xkb_layout "us,ru"
+    xkb_variant ","
+    xkb_options "compose:ralt,grp_led:caps,grp:caps_toggle"
+}
+
+#### System cmd:
+
+bindsym $alt+r exec fish -c reboot
+bindsym $alt+e exec killall sway
+bindsym $alt+p exec fish -c poweroff
+bindsym $alt+l exec swaylock -f -C ~/.config/swaylock/config; mode "default"
+### Key bindings
+# Basics:
+# Start all programms
+bindsym $mod+Return exec $term
+bindsym $mod+Ctrl+Return exec $term -e tmux attach
+bindsym $ctrl+f exec fish -c thunar_t3
+bindsym $ctrl+w exec fish -c vivaldi_t2
+bindsym $ctrl+t exec fish -c telegram_t2
+bindsym $ctrl+e exec fish -c geany_t4
+bindsym $ctrl+o exec fish -c libreoffice_t6 
+bindsym $ctrl+i exec fish -c mpv_t9
+bindsym $mod+Space exec fish -c ch_layout
+bindsym $alt+Space exec fish -c layout_alt &
+
+### Alt key
+bindsym $alt+d exec fish -c alert_date_ch
+bindsym $alt+x exec fish -c alert_play
+bindsym $alt+n exec nwg-look
+
+# Kill focused window
+bindsym $mod+k kill
+
+# Start your launcher
+bindsym $mod+q exec $menu
+
+###=====SOX======
+bindsym $mod+F7 exec fish -c sox_play
+bindsym $mod+F8 exec fish -c sox_stop
+bindsym $mod+F6 exec fish -c sox_next
+bindsym $mod+F5 exec fish -c sox_back
+bindsym $mod+F9 exec fish -c sox_list_all
+bindsym $mod+F10 exec fish -c sox_list
+
+# Drag floating window
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Ctrl+q reload
+
+# Audio
+bindsym $mod+F3 exec "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+8 waybar"
+bindsym $mod+F2 exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+8 waybar"
+bindsym $mod+F4 exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 waybar"
+
+# Brightness
+# bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+# bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+bindsym $mod+Shift+F11 exec light -U 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+bindsym $mod+Shift+F12 exec light -A 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+
+bindsym $mod+F1 exec pavucontrol -t 3
+
+### Color picker
+# Get RGB code
+bindsym $mod+y exec wl-color-picker clipboard
+# bindsym $mod+y exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+# Get RGB code and open zenity
+bindsym $mod+Shift+y exec wl-color-picker
+
+### CLipboard
+bindsym $mod+v exec pkill wofi || clipman pick -t wofi
+bindsym $mod+Shift+v exec clipman clear -t wofi
+bindsym $mod+Ctrl+v exec clipman clear --all && \
+  notify-send "Clipman" "All clipboard cleared" --icon=$HOME/.local/share/notify-icons/bell.png
+
+### Screenshot (Saved on ~/Pictures)
+bindsym $ctrl+s exec ~/.local/bin/sway-screenshot -m region
+# Screen record
+bindsym $mod+Ctrl+Shift+r exec $term -e wf-recorder -a -f $HOME/$(date +"Screenrecord_%Y-%m-%d_%H-%M-%S.mp4")
+
+# Warm
+bindsym $ctrl+F7 exec wlsunset -T 4001
+# Normal
+bindsym $mod+Shift+F7 exec wlsunset -T 6500
+
+# Regular floating
+for_window [app_id="sp-term|sp-lf|sp-cal|sp-mus|sp-nmt|sp-htop"] floating enable
+bindsym $mod+Shift+Return exec $term --class sp-term
+bindsym $mod+e exec $term --class sp-lf -e lf
+bindsym $mod+c exec $term --class sp-cal -e calcurse
+bindsym $mod+m exec $term --class sp-mus -e ncmpcpp
+bindsym $mod+$alt+n exec $term --class sp-nmt -e nmtui
+bindsym $mod+Shift+Delete exec $term --class sp-htop -e htop
+
+# Sway scratchpad:
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+## Moving around:
+# Move your focus around
+
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+#=================================#
+# Keyboard Shortcuts (Workspaces) #
+#=================================#
+# Switch to workspace
+set $ws1 "️1️⃣ work"
+set $ws2 "2️⃣ browser"
+set $ws3 "3️⃣ fm"
+set $ws4 "4️⃣ editor"
+set $ws5 "5️⃣ gimp"
+set $ws6 "️6️⃣ office"
+set $ws7 "7️⃣ ssh"
+set $ws8 "️8️⃣ media"
+set $ws9 "9️⃣  iptv"
+set $ws0 "️0️⃣  my"
+
+# Move between workspaces
+bindsym $ctrl+1 exec fish -c tag1
+bindsym $ctrl+2 exec fish -c tag2
+bindsym $ctrl+3 exec fish -c tag3
+bindsym $ctrl+4 exec fish -c tag4
+bindsym $ctrl+5 exec fish -c tag5
+bindsym $ctrl+6 exec fish -c tag6
+bindsym $ctrl+7 exec fish -c tag7
+bindsym $ctrl+8 exec fish -c tag8
+bindsym $ctrl+9 exec fish -c tag9
+bindsym $ctrl+0 exec fish -c tag0
+
+# Move focused container to workspace
+bindsym $ctrl+Shift+1 move container to workspace $ws1
+bindsym $ctrl+Shift+2 move container to workspace $ws2
+bindsym $ctrl+Shift+3 move container to workspace $ws3
+bindsym $ctrl+Shift+4 move container to workspace $ws4
+bindsym $ctrl+Shift+5 move container to workspace $ws5
+bindsym $ctrl+Shift+6 move container to workspace $ws6
+bindsym $ctrl+Shift+7 move container to workspace $ws7
+bindsym $ctrl+Shift+8 move container to workspace $ws8
+bindsym $ctrl+Shift+9 move container to workspace $ws9
+
+
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
+bindsym $ctrl+$right workspace next
+bindsym $ctrl+$left workspace prev
+bindsym $ctrl+$up workspace back_and_forth
+
+# Layout stuff:
+# $mod+m or $mod+n, for horizontal and vertical splits
+# respectively.
+bindsym $mod+$alt+j split v
+bindsym $mod+$alt+l split h
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle sticky (window should floating first)
+bindsym $mod+s sticky toggle
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+Tab focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+# focus the child container
+bindsym $mod+Shift+a focus child
+
+# Gap
+gaps inner 8
+gaps outer 2
+smart_gaps on
+hide_edge_borders smart_no_gaps
+
+# Resize
+bindsym $mod+Ctrl+h resize shrink width 5 px or 5 ppt
+bindsym $mod+Ctrl+j resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+k resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+l resize grow width 5 px or 5 ppt
+bindsym $mod+Ctrl+Left resize shrink width 5 px or 5 ppt
+bindsym $mod+Ctrl+Down resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+Up resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+Right resize grow width 5 px or 5 ppt
+
+# Title format for windows
+for_window [shell="xdg_shell"] title_format "%title (%app_id)"
+for_window [shell="x_wayland"] title_format "%class - %title"
+
+# class                 border  bground text    indicator child_border
+client.focused          #a5a5a5 #404040 #f2f2f2 #f3b787   #a5a5a5
+client.focused_inactive #404040 #404040 #f2f2f2 #484e50   #484e50
+client.unfocused        #404040 #222222 #cfcfcf #292d2e   #222222
+client.urgent           #2f343a #be3645 #f2f2f2 #be3645   #be3645
+client.placeholder      #000000 #0c0c0c #f2f2f2 #000000   #0c0c0c
+client.background       #f2f2f2
+
+# Menubar
+bindsym $ctrl+Space exec fish -c bar_ch
+
+#======#
+# Misc #
+#======#
+include /etc/sway/config-vars.d/*
+include /etc/sway/config.d/*
+include $HOME/.config/sway/config.d/*
