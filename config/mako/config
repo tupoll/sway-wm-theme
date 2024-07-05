@@ -1,0 +1,17 @@
+font=UbuntuMono 13.5
+background-color=#080815
+text-color=#7F7F7F
+width=400
+height=300
+padding=10
+margin=10
+progress-color=over #674FD4
+icon-path=/usr/share/icons/Yaru-blue
+max-icon-size=70
+layer=overlay
+border-size=1
+border-radius=10
+border-color=#3B1515
+default-timeout=8000
+[urgency=high]
+ignore-timeout=1
