@@ -1,7 +1,5 @@
 #!/usr/bin/lua
---[[
-by tupoll for freebsd.
---]]
+
 local a =('rm -rf ~/tmp/playlist1\n')
 local c =("find ~/Музыка -name '*.mp3' -user tupoll -print | sort -u>~/tmp/playlist\n")
 local b = ('rm -rf ~/tmp/sox\n')
