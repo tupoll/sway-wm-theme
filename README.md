@@ -20,7 +20,8 @@ luarocks:
 ```
   https://luarocks.org/#quick-start
 ```
-`` 
+##install:
+```
 sudo luarocks install luasocket
 sudo luarocks install luasec
 sudo luarocks install luv
@@ -30,7 +31,7 @@ Or install locally:
 luarocks config local_by_default true
 luarocks install luasocket --local
 luarocks install luv --local
-``
+```
 Copy the alert.lua file to your lua directory:
 ``
 sudo cp -rv /home/$USER/.sway-wm-theme/alert.lua /usr/local/share/lua/5.4/
