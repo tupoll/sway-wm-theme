@@ -17,29 +17,32 @@ the luv library from luarocks is taken.
 luarocks:
   https://luarocks.org/#quick-start
 ```
-```install:  
+`` 
 sudo luarocks install luasocket
 sudo luarocks install luasec
 sudo luarocks install luv
 ```
 Or install locally:
-
-``luarocks config local_by_default true
+```
+luarocks config local_by_default true
 luarocks install luasocket --local
 luarocks install luv --local
 ``
 Copy the alert.lua file to your lua directory:
 ``
 sudo cp -rv /home/$USER/.sway-wm-theme/alert.lua /usr/local/share/lua/5.4/
-or /usr/share/lua/5.4/ ,...another version of lua.
 ``
+or /usr/share/lua/5.4/ ,...another version of lua.
+
 Temporary sway files in the directory /var/tmp/sway
-``give user rights:
+give user rights:
+```
 sudo chown -R <username>:<usergroup> /var/tmp/sway
 ```
 In the file ~/.config/sway/modules/alert/date-wttr.sh we rewrite the city
 to our own.
 HOTKEYS:
+```
 Win=mod4
 Control=ctrl
 Alt=alt
@@ -82,6 +85,7 @@ alt  + r Reboot
 alt  + e Exit sway
 alt  + p Power off
 alt  + Space Alternating layout
+``
 For other hotkeys, see sway/config.
 
 Built and running on Linux distribution based on Debian armv7
