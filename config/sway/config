@@ -15,7 +15,7 @@ exec fish -c tag1
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec fish -c bar_ch 
-
+exec fish -c pictures_tmp
 
 font pango: JetBrains Mono Nerd Font 13
 
