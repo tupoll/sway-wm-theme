@@ -168,7 +168,10 @@ chmod 755 ~/.config/sway/modules/tags/layouts/ch_layout.fish
 chmod 755 ~/.config/sway/modules/tags/layouts/alternating_layouts.py
 chmod 755 ~/.config/sway/modules/alert/date.sh
 chmod 755 ~/.config/sway/modules/alert/date-wttr.sh
-
+cd
+cd $HOME/.config/sway/modules/tags
+chmod 755 *
+cd
 printf "\e[1;32m* All configurations copied\e[0m\n"
 printf "\e[1;32m* Install icons and themes yourself, nwg-look to help\e[0m\n"
 printf "\e[1;32m* Reboot! Thank you for your choice.\e[0m\n"
