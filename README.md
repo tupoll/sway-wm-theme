@@ -89,7 +89,7 @@ alt  + r Reboot
 alt  + e Exit sway
 alt  + p Power off
 alt  + Space Alternating layout
-``
+```
 For other hotkeys, see sway/config.
 
 Built and running on Linux distribution based on Debian armv7
