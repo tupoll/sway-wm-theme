@@ -3,7 +3,7 @@
 cd ~/
 
 ### Sway packages
-sudo apt install -y sway waybar swaylock swayidle swaybg libinput-dev python-i3ipc
+sudo apt install -y sway waybar swaylock swayidle swaybg libinput-dev python3-i3ipc
 sudo apt install -y gvfs-backends
 
 ### File manager (thunar)
@@ -142,7 +142,7 @@ mkdir -p ~/.local/share
 cp -rv ~/.sway-wm-theme/local/share/* ~/.local/share/
 cp -rv ~/.sway-wm-theme/profile ~/.profile
 cp -rv ~/.sway-wm-theme/bashrc ~/.bashrc
-chsh -s $(which fish) # change default shell
+#sudo chsh -s $(which fish) # change default shell
 sudo mkdir -p /var/tmp/sway
 sudo echo "tmpfs  /var/tmp/sway  tmpfs size=5M  0 0">>/etc/fstab
 
