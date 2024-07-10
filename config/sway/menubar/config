@@ -33,7 +33,7 @@
     },
     "custom/stop": {
      "format": " {} stop ",
-        "exec": "echo ' ⏹ '",
+        "exec": "echo '⏹'",
         "interval": "once",
         "on-click": "pkill -f play", 
     },
