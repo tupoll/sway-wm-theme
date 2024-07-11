@@ -34,9 +34,9 @@ luarocks install luv --local
 ```
 Copy the alert.lua file to your lua directory:
 ``
-sudo cp -rv /home/$USER/.sway-wm-theme/alert.lua /usr/local/share/lua/5.4/
+sudo cp -rv /home/$USER/.sway-wm-theme/alert.lua /usr/local/lib/lua/5.4/
 ``
-or /usr/share/lua/5.4/ ,...another version of lua.
+or /usr/lib/lua/5.4/ ,...another version of lua.
 
 Temporary sway files in the directory /var/tmp/sway
 give user rights:
