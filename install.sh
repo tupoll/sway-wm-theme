@@ -103,7 +103,7 @@ sudo apt install -y mupdf zathura
 sudo apt install -y mirage nsxiv
 
 ### Music/media player packages
-sudo apt install -y sox libmp3lame0 libtwolame-dev twolame libmp3lame-dev mpv
+sudo apt install -y sox libmp3lame0 libtwolame-dev twolame libmp3lame-dev libsox-fmt-mp3 lame mpv
 
 ### firefox dependencies (build instruction at the on of this script)
 sudo apt install -y libdbus-glib-1-2
