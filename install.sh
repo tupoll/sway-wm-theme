@@ -4,7 +4,7 @@ cd ~/
 
 ### Sway packages
 sudo apt install -y sway waybar swaylock swayidle swaybg libinput-dev python3-i3ipc
-sudo apt install -y gvfs-backends
+sudo apt install -y gvfs-backends wlr-randr
 
 ### File manager (thunar)
 sudo apt install -y thunar thunar-archive-plugin thunar-volman file-roller
