@@ -1,3 +1,38 @@
+--------------------------------------------------------------------------------
+-- Functionality similar to JavaScript "alert()" implemented in pure Lua.
+--------------------------------------------------------------------------------
+-- MODULE: alert
+
+-- VERSION: 4 (2018-11-12)
+
+-- AUTHOR: Egor (egor.skriptunoff(at)gmail.com)
+-- This module is released under the MIT License (the same license as Lua itself).
+--
+-- DESCRIPTION:
+--   This module returns the following function:
+--     alert(text, title, colors, wait, admit_linebreak_inside_of_a_word)
+--   It creates a window with specified text and waits until user closed the window by pressing any key.
+--
+-- USAGE:
+--   Simplest example:
+--     local alert = require("alert")
+--     alert("Hello")
+--   See "example.lua" for more examples.
+--
+-- REQUIREMENTS:
+--   Lua 5.1, Lua 5.2, Lua 5.3, Lua 5.4 or LuaJIT.
+--   Lua standard library functions "os.execute()" and "io.popen()" must be non-sandboxed.
+--   Supported OS: probably all X11-based *nices, Windows (XP and higher), MacOSX, Cygwin, Wine.
+--
+-- CHANGELOG:
+--  version     date      description
+--  -------  ----------   -----------
+--     4     2018-11-12   Quoted text under Linux is now a bit shorter
+--     3     2016-06-29   Wine detection code updated; now it works correctly with Wine for OSX
+--     2     2016-06-25   Wine support added
+--     1     2016-06-21   First release
+-----------------------------------------------------------------------------
+
 local NIL = {} -- this value represents "nil" values inside "initial_config" table
 
 -- Initial values of configurable parameters.
