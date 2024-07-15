@@ -45,6 +45,7 @@ sudo chown -R <username>:<usergroup> /var/tmp/sway
 ```
 In the file ~/.config/sway/modules/alert/date-wttr.sh we rewrite the city
 to our own.
+Please remove from the environment: sudo apt remove sway-notification-center
 HOTKEYS:
 ```
 Win=mod4
