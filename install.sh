@@ -51,7 +51,7 @@ cd wl-color-picker
 sudo make install
 
 #Install lua luarocks luasocket
-sudo apt install -y lua5.4 liblua5.4-dev
+sudo apt install -y lua5.4 liblua5.4-dev lua-luv-dev
 printf "\e[1;32m* About luarocks separately read README.md\e[0m\n"
 
 sudo apt install -y meson ninja-build libcairo2-dev pango1.0-tools libgtk-3-dev libglib2.0-0 scdoc
