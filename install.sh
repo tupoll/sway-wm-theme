@@ -88,6 +88,7 @@ xdg-user-dirs-update
 ### Microcode for Intel/AMD 
 #sudo apt install -y amd64-microcode
 # sudo apt install -y intel-microcode 
+sudo apt remove sway-notification-center
 
 #### For GTK setting
 #### using gsettings command
