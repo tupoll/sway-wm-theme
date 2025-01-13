@@ -1,0 +1,14 @@
+window {
+        /*background-color: rgba (0, 0, 0, 0.0);*/
+        background-color: transparent;
+}
+
+#box-outer {
+        /* Define attributes of the box surrounding icons here */
+         /*background-color: rgba (255, 255, 255, 0.0)*/
+         background-color: transparent;
+}
+
+#box-inner {
+        background-color: rgba (0, 0, 0, 0.0)
+}
