@@ -1,5 +1,4 @@
 #!/usr/bin/lua
-#!/usr/bin/lua
 
 local function play() os.execute("~/tmp/sox/play")end
           
