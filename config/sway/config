@@ -1,3 +1,14 @@
+#output HDMI-A-1 {
+#    mode  1920x1080@59.94Hz
+#    pos 0 0
+#    transform normal
+#    scale 1.0
+#    scale_filter nearest
+#    adaptive_sync off
+#    dpms on
+#}
+
+#output HDMI-A-1 mode 1280x780 pos 1280 0 
 set $mod Mod4
 set $alt Mod1
 set $ctrl Control
@@ -10,12 +21,12 @@ set $menu pkill wofi || wofi -c ~/.config/wofi/config -I | xargs swaymsg exec --
 
 ####  Autostart
 exec $HOME/.config/sway/preserve-layout-per-window.py &
+exec mako 
 exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus &
-exec fish -c tag1 
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec fish -c tag1  
 exec fish -c bar_ch 
 exec fish -c pictures_tmp
+#exec nm-applet 
 
 font pango: JetBrains Mono Nerd Font 13
 
@@ -50,7 +61,7 @@ bindsym $alt+l exec swaylock -f -C ~/.config/swaylock/config; mode "default"
 # Start all programms
 bindsym $mod+Return exec $term
 bindsym $mod+Ctrl+Return exec $term -e tmux attach
-bindsym $ctrl+f exec fish -c thunar_t3
+bindsym $ctrl+f exec fish -c thunar_t1
 bindsym $ctrl+w exec fish -c vivaldi_t2
 bindsym $ctrl+t exec fish -c telegram_t2
 bindsym $ctrl+e exec fish -c geany_t4
@@ -70,13 +81,19 @@ bindsym $mod+k kill
 # Start your launcher
 bindsym $mod+q exec $menu
 
-###=====SOX======
-bindsym $mod+F7 exec fish -c sox_play
-bindsym $mod+F8 exec fish -c sox_stop
-bindsym $mod+F6 exec fish -c sox_next
+###=====SOX======Select hotkeys for your keyboard model!
+bindsym XF86AudioPlay exec fish -c sox_play
+bindsym XF86AudioStop exec fish -c sox_stop
+#bindsym XF86AudioNext exec fish -c sox_next
+bindsym XF86AudioPrev exec fish -c sox_back ##?
+bindsym XF86Calculator exec fish -c sox_list_all
+#bindsym XF86OpenURL exec fish -c sox_list
+#bindsym $mod+F6 exec fish -c sox_play
+#bindsym $mod+F7 exec fish -c sox_stop
+bindsym $mod+F8 exec fish -c sox_next
 bindsym $mod+F5 exec fish -c sox_back
-bindsym $mod+F9 exec fish -c sox_list_all
-bindsym $mod+F10 exec fish -c sox_list
+bindsym $mod+F12 exec fish -c sox_list_all
+bindsym $mod+F2 exec fish -c sox_list
 
 # Drag floating window
 floating_modifier $mod normal
@@ -85,10 +102,12 @@ floating_modifier $mod normal
 bindsym $mod+Ctrl+q reload
 
 # Audio
-bindsym $mod+F3 exec "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+8 waybar"
-bindsym $mod+F2 exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+8 waybar"
-bindsym $mod+F4 exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 waybar"
-
+#bindsym $mod+F10 exec "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+8 waybar"
+#bindsym $mod+F9 exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+8 waybar"
+#bindsym $mod+F11 exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 waybar"
+bindsym XF86AudioRaiseVolume exec amixer sset A2DP 5%+
+bindsym XF86AudioLowerVolume exec amixer sset A2DP 5%-
+bindsym XF86AudioMute exec amixer sset A2DP 0
 # Brightness
 # bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -154,9 +173,9 @@ bindsym $mod+Shift+$right move right
 # Keyboard Shortcuts (Workspaces) #
 #=================================#
 # Switch to workspace
-set $ws1 "️1️⃣ work"
+set $ws1 "️1️⃣ fm"
 set $ws2 "2️⃣ browser"
-set $ws3 "3️⃣ fm"
+set $ws3 "3️⃣ work"
 set $ws4 "4️⃣ editor"
 set $ws5 "5️⃣ gimp"
 set $ws6 "️6️⃣ office"
@@ -195,11 +214,8 @@ bindsym $ctrl+$right workspace next
 bindsym $ctrl+$left workspace prev
 bindsym $ctrl+$up workspace back_and_forth
 
-# Layout stuff:
-# $mod+m or $mod+n, for horizontal and vertical splits
-# respectively.
-bindsym $mod+$alt+j split v
-bindsym $mod+$alt+l split h
+# WM PINNACLE:
+bindsym $mod+0 exec fish -c wm_ch
 
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
