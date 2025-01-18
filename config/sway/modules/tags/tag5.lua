@@ -1,10 +1,4 @@
-
-
-local res = os.getenv("HOME") .. "/.config/sway/modules/sway/pictures/"
-
-
-local tags = os.getenv("HOME") .. "/.config/sway/modules/tags"
-
+#!/usr/bin/lua
 local function tag_1(sway) os.execute("sway  workspace 5️⃣ gimp && setwallpaper /var/tmp/sway/pictures/tag5.jpg &")end 
 local function layout1() os.execute("fish -c layout_stacking") end
                                                                                     
