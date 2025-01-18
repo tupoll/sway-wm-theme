@@ -19,7 +19,7 @@ set LC_MEASUREMENT ru_RU.UTF-8
 set LC_IDENTIFICATION ru_RU.UTF-8
 set LC_ALL ru_RU.UTF-8
 
-set PATH $HOME/.local/src/node-v18.16.1-linux-x64/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+set PATH /sbin:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 
 set XDG_SESSION_TYPE wayland
 set XDG_SESSION_DESKTOP sway
