@@ -1,4 +1,4 @@
-function reboot --wraps=/sbin/reboot --description 'alias reboot /sbin/reboot'
-  /sbin/reboot $argv
+function reboot --description 'alias reboot sudo reboot'
+  sudo reboot $argv
         
 end
