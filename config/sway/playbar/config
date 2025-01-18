@@ -1,0 +1,179 @@
+{
+                "layer": "right",
+                "position": "right",
+                "height": 900,
+                "width": 800,
+                 "gaps": "vertical", 
+                "mode": "overlay",
+                "status_edge_padding": 8,
+                "status_padding": 8,                                               
+                "modules-top": [ ],
+                "modules-center": ["custom/play", "custom/now", "custom/next" ],
+                "modules-right": ["custom/str1", "custom/str2", "custom/str3", "custom/str4", "custom/str5", "custom/str6", "custom/str7", "custom/str8", "custom/str9", "custom/str10", "custom/str11", "custom/str12", "custom/str13", "custom/str14", "custom/str15", "custom/str16", "custom/str17", "custom/str18", "custom/str19", "custom/str20", "custom/str21", "custom/str22", "custom/str23", "custom/str24", "custom/str25", "custom/str26", "custom/str27", "custom/str28", "custom/str29", "custom/str30"],
+                "custom/play": {
+     "format": " {} СЕЙЧАС ИГРАЕТ : ",
+        "exec": "echo '🎼'",
+        "interval": "once", 
+    },
+                "custom/now": {
+     "format": " {} ",
+        "exec": "lua /home/$USER/.config/nwg-wrapper/print_play.lua",
+        "interval": 5, 
+    },
+                 "custom/next": {
+     "format": " {} СЛЕДУЮЩАЯ : ",
+        "exec": "echo '➡️ 🎼'",
+        "interval": "once", 
+    },
+                 "custom/str1": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str1.lua",
+        "interval": 5, 
+    },
+               "custom/str2": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str2.lua",
+        "interval": 5, 
+    },
+               "custom/str3": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str3.lua",
+        "interval": 5, 
+    },
+               "custom/str4": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str4.lua",
+        "interval": 5, 
+    },
+               "custom/str5": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str5.lua",
+        "interval": 5, 
+    },
+               "custom/str6": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str6.lua",
+        "interval": 5, 
+    },
+               "custom/str7": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str7.lua",
+        "interval": 5, 
+    },
+               "custom/str8": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str8.lua",
+        "interval": 5, 
+    },
+               "custom/str9": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str9.lua",
+        "interval": 5, 
+    },
+               "custom/str10": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str10.lua",
+        "interval": 5, 
+    },
+              "custom/str11": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str11.lua",
+        "interval": 5, 
+    },
+               "custom/str12": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str12.lua",
+        "interval": 5, 
+    },
+               "custom/str13": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str13.lua",
+        "interval": 5, 
+    },
+               "custom/str14": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str14.lua",
+        "interval": 5, 
+    },
+               "custom/str15": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str15.lua",
+        "interval": 5, 
+    },
+               "custom/str16": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str16.lua",
+        "interval": 5, 
+    },
+               "custom/str17": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str17.lua",
+        "interval": 5, 
+    },
+               "custom/str18": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str18.lua",
+        "interval": 5, 
+    },
+               "custom/str19": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str19.lua",
+        "interval": 5, 
+    },
+               "custom/str20": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str20.lua",
+        "interval": 5, 
+    },
+               "custom/str21": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str21.lua",
+        "interval": 5, 
+    },
+               "custom/str22": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str22.lua",
+        "interval": 5, 
+    },
+               "custom/str23": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str23.lua",
+        "interval": 5, 
+    },
+               "custom/str24": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str24.lua",
+        "interval": 5, 
+    },
+               "custom/str25": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str25.lua",
+        "interval": 5, 
+    },
+               "custom/str26": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str26.lua",
+        "interval": 5, 
+    },
+               "custom/str27": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str27.lua",
+        "interval": 5, 
+    },
+               "custom/str28": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str28.lua",
+        "interval": 5, 
+    },
+               "custom/str29": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str29.lua",
+        "interval": 5, 
+    },
+               "custom/str30": {
+     "format": " {} ",
+        "exec": "lua $HOME/.config/sway/playbar/show/str30.lua",
+        "interval": 5, 
+    },
+           }
+###waybar -c $HOME/.config/sway/databar/config -s $HOME/.config/sway/databar/style.css
