@@ -1,10 +1,4 @@
-
-
-local res = os.getenv("HOME") .. "/.config/sway/modules/sway/pictures/"
-
-
-local tags = os.getenv("HOME") .. "/.config/sway/modules/tags"
-
+#!/usr/bin/lua
 local function tag_1(sway) os.execute("sway  workspace 9️⃣  iptv && setwallpaper /var/tmp/sway/pictures/tag9.jpg &")end 
 local function layout1() os.execute("fish -c layout_splith") end
                                                                                     
