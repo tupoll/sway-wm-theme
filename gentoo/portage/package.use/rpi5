@@ -1,0 +1,23 @@
+media-libs/freetype -harfbuzz
+dev-python/docutils -python_targets_python3_11
+dev-lang/python -bluetooth
+gui-apps/swaybg gdk-pixbuf
+sys-auth/seatd server
+gui-wm/sway  swaynag tray wallpapers
+ dev-lua/luv -lua_single_target_luajit
+gui-wm/sway filecaps swaybar swaymsg wallpapers
+www-client/vivaldi -qt6
+sys-fs/fuse suid
+sys-libs/gdbm berkdb
+net-wireless/wpa_supplicant tkip wps wep
+sys-libs/ncurses -gpm
+sys-apps/attr -nls
+sys-libs/libcap -pam
+gui-apps/waybar network tray wifi  
+media-video/ffmpeg vpx
+sys-libs/zlib minizip
+net-misc/networkmanager iwd dhcpcd resolvconf appindicator 
+dev-python/pillow webp
+net-libs/libtorrent-rasterbar python
+media-libs/freetype harfbuzz
+dev-libs/boost python
