@@ -69,11 +69,16 @@ sudo make install
 
 # Build wallutils
 sudo apt install -y git imagemagick libx11-dev libxcursor-dev libxmu-dev libwayland-dev libxpm-dev xbitmaps libxmu-headers libheif-dev make
-git clone https://github.com/xyproto/wallutils
-    cd wallutils
-    make
-sudo make PREFIX=/usr/local install
+#git clone https://github.com/xyproto/wallutils
+#    cd wallutils
+#    make
+#sudo make PREFIX=/usr/local install
 #####
+#Build nwg-wrapper
+git clone https://github.com/nwg-piotr/nwg-wrapper.git
+cd nwg-wrapper
+sudo python3 setup.py install --optimize=1
+################################################
 sudo apt install -y wf-recorder
 
 sudo apt install -y wayland-protocols xwayland 
