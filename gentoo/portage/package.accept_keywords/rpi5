@@ -1,0 +1,85 @@
+ media-libs/suil ~arm64
+ media-libs/libmp3splt **
+ media-libs/portsmf ~arm64
+ media-libs/libsoundtouch ~arm64
+media-sound/audacity ~arm64
+app-arch/rar **
+app-arch/unrar **
+media-plugins/kodi-pvr-wmc **
+media-tv/kodi **
+media-plugins/kodi-pvr-iptvsimple **
+x11-themes/lyra-icon-theme **
+x11-themes/sweet-dark-kvantum-theme ** 
+net-wireless/wpa_supplicant ~arm64
+media-sound/bluez-alsa ~arm64
+dev-cpp/abseil-cpp ~arm64
+dev-cpp/expected-lite ~arm64
+dev-cpp/cppgir ~arm64
+sys-kernel/raspberrypi-sources ~arm64
+sys-fs/zfs ~arm64
+sys-fs/zfs-kmod ~arm64
+gui-apps/waybar ~arm64
+ dev-libs/date ~arm64
+ dev-util/geany **
+xfce-extra/thunar-archive-plugin ~arm64
+ xfce-extra/thunar-media-tags-plugin **
+dev-python/i3ipc **
+sys-power/acpi ~arm64
+dev-libs/light **
+gui-apps/wofi **
+www-client/vivaldi ~arm64
+ app-misc/nwg-look **
+x11-apps/xcur2png **
+media-gfx/nsxiv **
+gui-libs/xdg-desktop-portal-wlr ~arm64
+www-client/brave-bin ~arm64
+ dev-libs/libpthread-stubs **
+app-misc/ansiweather **
+gui-apps/grimshot **
+x11-themes/xfwm4-themes **
+x11-themes/mate-themes **
+x11-misc/icon-naming-utils ~arm64
+app-misc/color **
+net-wireless/bluez-tools ~arm64
+ net-wireless/hidclient **
+sys-fs/zfs ~arm64
+sys-fs/zfs-kmod ~arm64
+sys-block/gparted ~arm64
+sys-kernel/genkernel ~arm64
+dev-python/ansi ~arm64
+dev-python/ansicolor ~arm64
+media-fonts/fira-mono ~arm64
+media-fonts/gofont-mono **
+media-fonts/monoid **
+x11-misc/dex **
+media-fonts/ubuntu-font-family ~arm64
+app-misc/calendar ~arm64
+ net-im/telegram-desktop ~arm64
+dev-cpp/ada ~arm64
+media-libs/libtgvoip ~arm64
+ media-libs/rnnoise ~arm64
+media-libs/tg_owt ~arm64
+dev-libs/libdispatch ~arm64
+media-gfx/gthumb ~arm64
+gui-apps/qt6ct **
+x11-themes/dracula-gtk-theme **
+x11-themes/bibata-cursor-theme **
+x11-themes/adapta-gtk-theme **
+x11-themes/beautyline-icon-theme **
+media-gfx/inkscape ~arm64
+x11-themes/sweet-dark-gtk-theme **
+x11-themes/sweet-folders-icon-theme **
+gui-apps/nwg-displays **
+gui-apps/wlr-randr ~arm64
+dev-cpp/ms-gsl ~arm64
+x11-themes/gnome-icon-theme-extras ~arm64
+x11-themes/fluent-icon-theme **
+x11-themes/candy-icon-theme **
+net-p2p/deluge ~arm64
+net-libs/libtorrent-rasterbar ~arm64
+dev-python/rencode ~arm64
+dev-build/just ~arm64
+x11-themes/yasis-icon-theme **
+x11-themes/oie-icon-theme **
+dev-perl/Syntax-Highlight-Engine-Simple-Perl **
+dev-perl/Syntax-Highlight-Engine-Simple **
