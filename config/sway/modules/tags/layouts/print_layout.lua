@@ -1,6 +1,6 @@
 #!/usr/bin/lua
 
-local file = ("/var/tmp/sway/layout") 
+local file = ("/var/tmp/wm/layout") 
   local t= {}
   for line in io.lines(file) do 
     t[#t+ 1] = line
