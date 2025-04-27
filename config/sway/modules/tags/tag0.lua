@@ -1,10 +1,11 @@
 #!/usr/bin/lua
-local function tag_1(sway) os.execute("sway workspace  0️⃣   my && setwallpaper /var/tmp/sway/pictures/tag0.jpg &")end 
-local function layout1() os.execute("fish -c layout_splith") end
-                                                                                    
-tag_1()       
-layout1()
-local a = ("tag 0")
-vol = io.open("/var/tmp/sway/tag", "w")
-vol:write(a)
-vol:close()
+local i = ("0️⃣   my")
+vol = io.open("/var/tmp/wm/tag", "w")
+vol:write(i)
+
+cmd1 = string.format("sway %s", "workspace  0️⃣   my")  
+cmd2 = string.format("setwallpaper %s", "/var/tmp/wm/pictures/tag0.jpg")
+cmd3 = string.format("fish -c %s", "layout_splith")
+io.popen(cmd1)
+io.popen(cmd2)
+io.popen(cmd3)
