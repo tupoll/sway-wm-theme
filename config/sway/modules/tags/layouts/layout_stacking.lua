@@ -1,9 +1,7 @@
 #!/usr/bin/lua
+cmd1 = string.format("sway %s", "layout stacking")
+io.popen(cmd1)
 
-local function layout() io.popen("sway layout stacking &")end
-
-layout()
 local a = ("stacking")
-vol = io.open("/var/tmp/sway/layout", "w")
+vol = io.open("/var/tmp/wm/layout", "w")
 vol:write(a)
-vol:close()
