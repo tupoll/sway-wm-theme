@@ -1,0 +1,6 @@
+cargo install ironbar
+emerge ironbar(gentoo)
+Go to the directory /home/$USER/.config/ironbar/scripts/ and install:
+cd /home/$USER/.config/ironbar/scripts/
+rustc tagactive.rs
+mv -f tagactive /home/$USER/.local/bin/tagactive
