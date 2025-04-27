@@ -149,8 +149,6 @@ cp -rv ~/.sway-wm-theme/local/share/* ~/.local/share/
 cp -rv ~/.sway-wm-theme/profile ~/.profile
 cp -rv ~/.sway-wm-theme/bashrc ~/.bashrc
 #sudo chsh -s $(which fish) # change default shell
-sudo mkdir -p /var/tmp/sway
-sudo echo "tmpfs  /var/tmp/sway  tmpfs size=5M  0 0">>/etc/fstab
 
 # Create thunar config to have 'open terminal here':
 [ ! -d "~/.config/xfce4/" ] && mkdir -p ~/.config/xfce4
