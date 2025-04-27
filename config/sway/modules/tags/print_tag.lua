@@ -10,6 +10,6 @@ function readfile(filename)
   return str
 end
 
-local str = readfile([[/var/tmp/sway/tag]])
+local str = readfile([[/var/tmp/wm/tag]])
 
 print(str)
