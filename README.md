@@ -23,7 +23,7 @@ https://github.com/GhostNaN/mpvpaper
 and change the lines in tag*.lua to this construction:
 ```
 local funtion kil() os.execute("pkill -f mpvpaper")end
-local function tag_1(sway) os.execute("sway workspace 1️⃣ fm && mpvpaper '*'  /var/tmp/sway/pictures/tag1.jpg &")end 
+local function tag_1(sway) os.execute("sway workspace 1️⃣ fm && mpvpaper '*'  /var/tmp/wm/pictures/tag1.jpg &")end 
 local function layout1() os.execute("fish -c layout_tabbed") end
 
 kil()                                                                                   
@@ -31,15 +31,15 @@ tag_1()
 layout1()
 
 local a = ("tag 1")
-vol = io.open("/var/tmp/sway/tag", "w")
+vol = io.open("/var/tmp/wm/tag", "w")
 vol:write(a)
 vol:close()
 ```
 
-Temporary sway files in the directory /var/tmp/sway
+Temporary sway files in the directory /var/tmp/wm
 give user rights:
 ```
-sudo chown -R <username>:<usergroup> /var/tmp/sway
+sudo chown -R <username>:<usergroup> /var/tmp/wm
 ```
 In the file ~/.config/sway/modules/alert/date-wttr.sh we rewrite the city
 to our own.
