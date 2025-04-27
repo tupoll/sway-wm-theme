@@ -1,10 +1,11 @@
 #!/usr/bin/lua
-local function tag_1(sway) os.execute("sway  workspace 5️⃣ gimp && setwallpaper /var/tmp/sway/pictures/tag5.jpg &")end 
-local function layout1() os.execute("fish -c layout_stacking") end
-                                                                                    
-tag_1()       
-layout1()
-local a = ("tag 5")
-vol = io.open("/var/tmp/sway/tag", "w")
-vol:write(a)
-vol:close()
+local i = ("5️⃣ gimp")
+vol = io.open("/var/tmp/wm/tag", "w")
+vol:write(i)
+
+cmd1 = string.format("sway %s", "workspace 5️⃣ gimp")  
+cmd2 = string.format("setwallpaper %s", " /var/tmp/wm/pictures/tag5.jpg")
+cmd3 = string.format("fish -c %s", "layout_tabbed")
+io.popen(cmd1)
+io.popen(cmd2)
+io.popen(cmd3)
