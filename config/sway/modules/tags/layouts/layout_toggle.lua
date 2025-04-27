@@ -1,8 +1,7 @@
 #!/usr/bin/lua
-local function layout() io.popen("sway layout toggle &")end
+cmd1 = string.format("sway %s", "layout toggle")
+io.popen(cmd1)
 
-layout()
 local a = ("toggle")
-vol = io.open("/var/tmp/sway/layout", "w")
+vol = io.open("/var/tmp/wm/layout", "w")
 vol:write(a)
-vol:close()
