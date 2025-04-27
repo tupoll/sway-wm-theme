@@ -39,6 +39,8 @@ vol:close()
 Temporary sway files in the directory /var/tmp/wm
 give user rights:
 ```
+sudo mkdir -p /var/tmp/wm
+sudo echo "tmpfs  /var/tmp/wm  tmpfs size=5M  0 0">>/etc/fstab
 sudo chown -R <username>:<usergroup> /var/tmp/wm
 ```
 In the file ~/.config/sway/modules/alert/date-wttr.sh we rewrite the city
