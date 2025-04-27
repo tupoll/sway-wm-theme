@@ -3,7 +3,7 @@
 function a() io.popen("amixer sget A2DP | awk '{print $5}'>/var/tmp/sway/volume ")end
 a()
 
- local file = ("/var/tmp/sway/volume") 
+ local file = ("/var/tmp/wm/volume") 
   local t= {}
   for line in io.lines(file) do 
     t[#t+ 1] = line
