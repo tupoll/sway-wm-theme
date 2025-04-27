@@ -1,7 +1,8 @@
 #!/usr/bin/lua
-function a() os.execute("swaymsg -t get_inputs -r | rg 'xkb_active_layout_name' --engine=auto | awk '{print $2}'>/var/tmp/sway/kbd")end
-a()
- local file = ("/var/tmp/sway/kbd") 
+cmd1 = string.format("swaymsg %s", "-t get_inputs -r | rg 'xkb_active_layout_name' --engine=auto | awk '{print $2}'>/var/tmp/wm/kbd")
+io.popen(cmd1)
+
+ local file = ("/var/tmp/wm/kbd") 
   local t= {}
   for line in io.lines(file) do 
     t[#t+ 1] = line
@@ -9,13 +10,11 @@ a()
 
 local results = string.gmatch(t[1], "En")
 for w in results  do
-   print(w)
+   --print("us")
+   print("🇺🇸")
 end
 local results = string.gmatch(t[1], "Ru")
 for x in results  do
-    print(x)
+    --print("ru")
+    print("🇷🇺")
 end
---[[
-local function f() io.popen("pkill -SIGRTMIN+2 waybar")end
-f()
---]]
