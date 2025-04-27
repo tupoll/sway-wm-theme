@@ -1,0 +1,216 @@
+let {
+   
+$music = {   
+}
+
+$volume = {
+}
+
+ $focused = { 
+   name = "foco"
+   type = "focused"
+   show_icon = true
+   icon_size = 22
+   truncate.mode = "end" 
+   truncate.max_length = 20 
+ }
+
+ $clock = {
+   type = "clock"
+   format = "%a, %d %b %H:%M"
+ }
+
+ $battery = {
+   type = "upower"
+   icon_size = 14
+   format = "{percentage}%"
+ }
+
+ $cpu = {
+   type = "sys_info"
+    name = "cpu" 
+    mode = "poll"   
+    interval = 1
+     format = [ " {cpu_percent}%" ]
+  }
+
+ $cpu_temp = {
+       type = "script"
+       name = "cpu_temp"
+       mode = "poll"
+       interval = 3000
+       cmd = "lua ~/.config/ironbar/scripts/cpu_temp.lua"
+   }
+
+ $memory = {
+   type = "sys_info"   
+   name = "memory"
+   interval = 30
+   mode = "poll"
+   format = [         
+     " {memory_percent}%"
+   ]
+ }
+
+ $power ={
+        class = "power-menu"
+        name="power-menu"
+        type = "custom"
+        bar = [       
+         {
+          label = "exit"
+          type = "button"
+          widgets = [{src="icon:system-shutdown" type="image" size=16}]
+          on_click = "popup:toggle"
+         }
+        ]
+        popup =[ 
+           {
+           name="popup-box"
+           type = "box"
+           orientatron = "horizontal"
+           widgets = [
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-shutdown" type="image" size=48}] on_click = "!fish -c poweroff" }
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-reboot" type="image" size=48}] on_click = "!fish -c reboot" }
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-lock-screen" type="image" size=48}] on_click = "!fish -c swaylock -f -C ~/.config/swaylock/config" }              
+             ]
+           }
+        ]
+    }
+    
+    $sox ={
+        class = "sox-menu"
+        name="sox-menu"
+        type = "custom"
+        bar = [       
+         {
+          label = "play"
+          type = "button"
+          widgets = [{src="icon:multimedia-audio-player" type="image" size=16}]
+          on_click = "popup:toggle"
+         }
+        ]
+        popup =[ 
+           {
+           name="popup-box"
+           type = "box"
+           orientatron = "horizontal"
+           widgets = [
+               { type = "button" class="play-btn" label = "" widgets = [{src="icon:media-playlist-play" type="image" size=24}] on_click = "!list_sox" }
+               { type = "button" class="play-btn" label = "" widgets = [{src="icon:media-playback-stop" type="image" size=24}] on_click = "!pkill -f play" }
+               { type = "button" class="play-btn" label = "" widgets = [{src="icon:media-playback-start" type="image" size=24}] on_click = "!play_sox" }
+               { type = "button" class="play-btn" label = "" widgets = [{src="icon:media-seek-forward" type="image" size=24}] on_click = "!fish -c swaylock -f -C ~/.config/swaylock/config" }
+               
+             ]
+           }
+        ]
+    }
+     
+    $exit ={
+        class = "exit-menu"
+        name="exit-menu"
+        type = "custom"
+        bar =[
+           {
+           type = "box"
+           orientatron = "horizontal"
+           widgets = [
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-shutdown" type="image" size=24}] on_click = "!~/.config/ironbar/scripts/shutdown.sh" }
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-reboot" type="image" size=24}] on_click = "!~/.config/ironbar/scripts/reboot.sh" }
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-lock-screen" type="image" size=24}] on_click = "!hyprlock" }
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-logout" type="image" size=24}] on_click = "!~/.config/ironbar/scripts/exit.sh" }
+             ]
+           }
+        ]
+    }
+
+ $tray = {
+   type = "tray"
+   direction = "h"
+   icon_size = 14
+ }
+
+$keymaps = {
+       type = "script"
+       name = "kbd"
+       mode = "poll"
+       interval = 3000
+       cmd = "fish -c print_kbd"
+   }
+
+ $network = {
+     type = "network_manager"
+     icon_size = 14
+   }
+ 
+// $swaymode = {
+//       type = "sway_mode"
+//       truncate = "start"
+//   }
+
+   $net =      {
+          type = "sys_info"
+          name = "net"
+          interval = 3
+          mode = "poll"
+          format = [
+          "󰓢 {net_down:eth0} / {net_up:eth0} Mbps"]}
+         
+
+ $tags = {
+        class = "power-menu"
+        name="power-menu"
+        type = "custom"
+        bar = [       
+         {
+          label = "exit"
+          type = "button"
+          widgets = [{ type = "script" name = "tagactive" mode = "poll" interval = 1000 cmd = "tagactive" }]
+          on_click = "popup:toggle"
+         }
+        ]
+        popup =[ 
+           {
+           name="popup-box"
+           type = "box"
+           orientatron = "vertical"
+           widgets = [
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '1️⃣  fm'"}] on_click = "!fish -c tag1" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '2️⃣ browser'"}] on_click = "!fish -c tag2" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '3️⃣ work'"}] on_click = "!fish -c tag3" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '4️⃣ editor'"}] on_click = "!fish -c tag4" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '5️⃣ gimp'"}] on_click = "!fish -c tag5" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '️6️⃣ office'"}] on_click = "!fish -c tag6" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '7️⃣ ssh'"}] on_click = "!fish -c tag7" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '️8️⃣ media'"}] on_click = "!fish -c tag8" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '9️⃣  iptv'"}] on_click = "!fish -c tag9" }
+               { type = "button" class="tags-btn" label = "" widgets = [{type = "script" name = "tagactive" mode = "poll" cmd = "echo '️0️⃣  my'"}] on_click = "!fish -c tag0" }                  
+             ]
+           }
+        ]
+    }
+
+    
+ $left = [ $tags $focused ]
+ $center = [ $clock ]
+ $right = [ $tray  $sox $power $keymaps $net $cpu_temp $cpu $memory]
+
+}
+
+in {
+   monitors.HDMI-A-1 = {
+       position = "bottom"
+       height = 30
+     
+       icon_theme = "BeautyLine"
+       start = $left
+       center = $center
+       end = $right
+   }
+
+   //monitors.HDMI-A-1 = {
+     //  position = "left"
+      // height = 30
+      // center = [ $lyrics ]
+   //}
+}
