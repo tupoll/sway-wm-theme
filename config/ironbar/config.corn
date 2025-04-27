@@ -106,24 +106,7 @@ $volume = {
         ]
     }
      
-    $exit ={
-        class = "exit-menu"
-        name="exit-menu"
-        type = "custom"
-        bar =[
-           {
-           type = "box"
-           orientatron = "horizontal"
-           widgets = [
-               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-shutdown" type="image" size=24}] on_click = "!~/.config/ironbar/scripts/shutdown.sh" }
-               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-reboot" type="image" size=24}] on_click = "!~/.config/ironbar/scripts/reboot.sh" }
-               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-lock-screen" type="image" size=24}] on_click = "!hyprlock" }
-               { type = "button" class="power-btn" label = "" widgets = [{src="icon:system-logout" type="image" size=24}] on_click = "!~/.config/ironbar/scripts/exit.sh" }
-             ]
-           }
-        ]
-    }
-
+    
  $tray = {
    type = "tray"
    direction = "h"
@@ -190,10 +173,26 @@ $keymaps = {
         ]
     }
 
+ 
+ $screenshot ={
+        class = "screenshot"
+        name="screenshot"
+        type = "custom"
+        bar =[
+           {
+           type = "box"
+           orientatron = "horizontal"
+           widgets = [
+               { type = "button" class="power-btn" label = "" widgets = [{src="icon:blueman-camera" type="image" size=16}] on_click = "!sway-screenshot -m region" }               
+             ]
+           }
+        ]
+    }
+
     
  $left = [ $tags $focused ]
  $center = [ $clock ]
- $right = [ $tray  $sox $power $keymaps $net $cpu_temp $cpu $memory]
+ $right = [ $tray  $screenshot  $sox $power $keymaps $net $cpu_temp $cpu $memory]
 
 }
 
