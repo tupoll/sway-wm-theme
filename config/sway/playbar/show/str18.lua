@@ -1,5 +1,5 @@
 #!/usr/bin/lua
-local file = ("/var/tmp/sway/playlist") 
+local file = ("/var/tmp/wm/playlist") 
   local t= {}
   for line in io.lines(file) do 
     t[#t+ 1] = line
